@@ -2,7 +2,11 @@
 #include "mqueue.h"
 MQueue::MQueue(prifn_t priFn, HEAPTYPE heapType, STRUCTURE structure)
 {
-  
+  this->m_priorFunc = priFn;
+  this->m_heapType = heapType;
+  this->m_structure = structure;
+  this->m_size = 0;
+  this->m_heap = nullptr;
 }
 MQueue::~MQueue()
 {
