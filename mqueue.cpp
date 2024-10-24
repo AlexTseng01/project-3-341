@@ -10,10 +10,10 @@ MQueue::MQueue(prifn_t priFn, HEAPTYPE heapType, STRUCTURE structure)
 }
 MQueue::~MQueue()
 {
-  
+  // IMPLEMENT LATER
 }
 void MQueue::clear() {
-    
+  // IMPLEMENT LATER
 }
 MQueue::MQueue(const MQueue& rhs)
 {
@@ -30,22 +30,25 @@ void MQueue::insertOrder(const Order& order) {
 }
 int MQueue::numOrders() const
 {
-  
+  return m_size;
 }
 prifn_t MQueue::getPriorityFn() const {
-  
+  return this->m_priorFunc;
 }
 Order MQueue::getNextOrder() {
-    
+
 }
 void MQueue::setPriorityFn(prifn_t priFn, HEAPTYPE heapType) {
-                      
+  this->m_priorFunc = priFn;
+  this->m_heapType = heapType;
+  // rebuild heap + check compat
 }
 void MQueue::setStructure(STRUCTURE structure){
-    
+  this->m_structure = structure;
+  // rebuild heap
 }
 STRUCTURE MQueue::getStructure() const {
-  
+  return m_structure;
 }
 void MQueue::printOrderQueue() const {
   
