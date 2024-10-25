@@ -144,7 +144,9 @@ private:
     /******************************************
      * Private function declarations go here! *
      ******************************************/
-    
+    void postOrderRM(Node* node);
+    Node* getRight(Node* node) const {return node->m_right;}
+    Node* getLeft(Node* node) const {return node->m_left;}
 };
 
 #endif

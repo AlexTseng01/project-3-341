@@ -17,7 +17,7 @@ void MQueue::clear() {
 }
 MQueue::MQueue(const MQueue& rhs)
 {
-  
+
 }
 MQueue& MQueue::operator=(const MQueue& rhs) {
   
@@ -26,7 +26,12 @@ void MQueue::mergeWithQueue(MQueue& rhs) {
   
 }
 void MQueue::insertOrder(const Order& order) {
-    
+    switch(m_heapType) {
+      case SKEW:
+        break;
+      case LEFTIST:
+        break;
+    }
 }
 int MQueue::numOrders() const
 {
@@ -84,4 +89,12 @@ ostream& operator<<(ostream& sout, const Order& order) {
 ostream& operator<<(ostream& sout, const Node& node) {
   sout << node.m_order;
   return sout;
+}
+
+void MQueue::postOrderRM(Node* node) {
+    if (node != nullptr) {
+        postOrderRM(node->m_left);
+        postOrderRM(node->m_right);
+        delete node;
+    }
 }
