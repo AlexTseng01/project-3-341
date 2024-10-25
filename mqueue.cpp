@@ -10,10 +10,10 @@ MQueue::MQueue(prifn_t priFn, HEAPTYPE heapType, STRUCTURE structure)
 }
 MQueue::~MQueue()
 {
-  // IMPLEMENT LATER
+  postOrderRM(m_heap);
 }
 void MQueue::clear() {
-  // IMPLEMENT LATER
+  postOrderRM(m_heap);
 }
 MQueue::MQueue(const MQueue& rhs)
 {
